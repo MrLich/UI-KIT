@@ -1,0 +1,14 @@
+# Node
+logs
+*.log
+pids
+*.pid
+*.seed
+lib-cov
+coverage
+.grunt
+dist/**
+.lock-wscript
+build/Release
+node_modules
+yarn.lock
