@@ -29,14 +29,14 @@ export default class ModalCommon extends React.Component {
                 {
                     props.types !== 'dialog' ? 
                         <TouchableOpacity style={styles.buttonModal1} onPress={props.onCloseModal1} >
-                            {props.nameButton1 ? props.nameButton1 : 'Đóng'}
+                           <Text>{props.nameButton1 ? props.nameButton1 : 'Đóng'}</Text>
                         </TouchableOpacity> :
                         <View style={{ paddingVertical: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
                             <TouchableOpacity onPress={props.onCloseModal2}>
-                                {props.nameButton1 ? props.nameButton1 : 'Hủy'}
+                                <Text>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
                             </TouchableOpacity>
                             <TouchableOpacity onPress={props.onCloseModal3}>
-                                {props.nameButton2 ? props.nameButton2 : 'Gọi'}
+                                <Text>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
                             </TouchableOpacity>
                         </View>
                 }
