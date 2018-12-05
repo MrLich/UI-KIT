@@ -28,6 +28,7 @@ import ProgressBar from './components/ProgressBar';
 import SelectCard from './components/SelectCard';
 import Slider from './components/Slider';
 import Picker from './components/Picker';
+import ModalCommon from './components/Modal';
 import Modal from './components/Modal';
 import WebView from './components/WebView';
 import PageView from './components/PageView';
@@ -79,6 +80,7 @@ export {
     ActivityIndicator,
     ContentLoader,
     Modal,
+    ModalCommon,
     Slider,
     Picker,
     WebView,
