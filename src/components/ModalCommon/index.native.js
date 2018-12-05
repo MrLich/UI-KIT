@@ -1,39 +1,49 @@
 import React from 'react';
 import Modal from './Modal';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-const stylesModal = {
-    height: '30%', 
-    position:'relative',
-    marginRight: '10%', 
-    width: '90%', 
-    borderRadius: 5,
-};
-export default ({props}) => <Modal
-    isOpen={props.visible}
-    onOpened={props.onShow}
-    onClosed={props.onRequestClose}
-    style={{...stylesModal, ...props.style}}>
-        <View style={styles.container}>
-            <Text style={styles.txtTitle}>{props.txtTitle}</Text>
-            <Text style={styles.txtContent1}>{props.txtTitle}</Text>
-            <View style={styles.containPolicy}>
-                <Text style={styles.txtDetail}>{props.txtDetail}</Text>
-                <Text style={styles.txtPolicy}>{props.txtPolicy}</Text>
+export default class ModalCommon extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        const props = this.props;
+        const stylesModal = {
+            height: props.height ? props.height : '30%', 
+            position:'relative',
+            marginRight:  props.marginRight ? props.marginRight : '10%', 
+            width: props.width ? props.width : '90%', 
+            borderRadius: props.borderRadius ? props.borderRadius : 5,
+        };
+        return <Modal
+        isOpen={props.visible}
+        onOpened={props.onShow}
+        onClosed={props.onRequestClose}
+        style={{...stylesModal, ...props.style}}>
+            <View style={styles.container}>
+                <Text style={styles.txtTitle}>{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</Text>
+                <Text style={styles.txtContent1}>{props.txtContent ? props.txtContent : 'Bạn chưa nhập Content' }</Text>
+                <View style={styles.containPolicy}>
+                    <Text style={styles.txtDetail}>{props.txtDetail ? props.txtDetail :  'Bạn chưa nhập thông tin chi tiết'}</Text>
+                    <Text style={styles.txtPolicy}>{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</Text>
+                </View>
+                {
+                    props.types !== 'dialog' ? 
+                        <TouchableOpacity style={styles.buttonModal1} onPress={props.onCloseModal1} >
+                            {props.nameButton1 ? props.nameButton1 : 'Đóng'}
+                        </TouchableOpacity> :
+                        <View style={{ paddingVertical: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
+                            <TouchableOpacity onPress={props.onCloseModal2}>
+                                {props.nameButton1 ? props.nameButton1 : 'Hủy'}
+                            </TouchableOpacity>
+                            <TouchableOpacity onPress={props.onCloseModal3}>
+                                {props.nameButton2 ? props.nameButton2 : 'Gọi'}
+                            </TouchableOpacity>
+                        </View>
+                }
             </View>
-            {
-                props.types !== 'dialog' ? 
-                    <ButtonText style={styles.buttonModal1} text={props.nameButton1} type='primary' onPress={props.onCloseModal1} /> :
-                    <View style={{ paddingVertical: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
-                        <TouchableOpacity onPress={props.onCloseModal2}>
-                            {props.nameButton1 ? props.nameButton1 : 'Hủy'}
-                        </TouchableOpacity>
-                        <TouchableOpacity onPress={props.onCloseModal3}>
-                            {props.nameButton2 ? props.nameButton2 : 'Gọi'}
-                        </TouchableOpacity>
-                    </View>
-            }
-        </View>
-    </Modal>;
+        </Modal>;
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
