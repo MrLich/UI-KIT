@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-
+import '../../../../../web/css/bootstrap.min.css';
 const overlayStyle = {
     position: 'fixed',
     top: 0,
