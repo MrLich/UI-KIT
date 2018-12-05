@@ -8,7 +8,7 @@ const stylesModal = {
     width: '90%', 
     borderRadius: 5,
 };
-export default (props) => <Modal
+export default ({props}) => <Modal
     isOpen={props.visible}
     onOpened={props.onShow}
     onClosed={props.onRequestClose}
