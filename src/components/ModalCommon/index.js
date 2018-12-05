@@ -10,7 +10,7 @@ const overlayStyle = {
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
 }
 
-export default class Modal extends React.Component {
+export default class ModalCommon extends React.Component {
     static setAppElement(elementName) {
         ReactModal.setAppElement('#' + elementName);
     }
