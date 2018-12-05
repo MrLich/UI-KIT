@@ -22,23 +22,16 @@ export default class ModalCommon extends React.Component {
             onRequestClose={props.onRequestClose}
             style={{ ...props.style, ...{ overlay: overlayStyle } }}
         >
-        <div className="modal" role="dialog">
-            <div className="modal-dialog" role="document">
-                <div className="modal-content">
-                    <div className="modal-header">
-                    <h5 className="modal-title">Modal title</h5>
-                    <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <div className="modal-body">
-                    <p>Modal body text goes here.</p>
-                    </div>
-                    <div className="modal-footer">
-                    <button type="button" className="btn btn-primary">Save changes</button>
-                    <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
+        <div className="containModal">
+            <div className="modalItem1">
+                <p>Modal body text goes here 1.</p>
+            </div>
+            <div className="modalItem2">
+                <p>Modal body text goes here 2. </p>
+            </div>
+            <div className="modalItem3">
+                <p>Modal body text goes here 3.</p>
+                <p>Modal body text goes here 4.</p>
             </div>
         </div>
         </ReactModal>
