@@ -19,24 +19,29 @@ export default class ModalCommon extends React.Component {
         onOpened={props.onShow}
         onClosed={props.onRequestClose}
         style={{...stylesModal, ...props.style}}>
-            <View style={styles.container}>
-                <Text style={styles.txtTitle}>{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</Text>
-                <Text style={styles.txtContent1}>{props.txtContent ? props.txtContent : 'Bạn chưa nhập Content' }</Text>
-                <View style={styles.containPolicy}>
-                    <Text style={styles.txtDetail}>{props.txtDetail ? props.txtDetail :  'Bạn chưa nhập thông tin chi tiết'}</Text>
-                    <Text style={styles.txtPolicy}>{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</Text>
-                </View>
+            <View style={[styles.container, props.container]}>
+               
+                <Text style={[styles.txtTitle, props.cssTxtTile]}>{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</Text>
+                <Text style={[styles.txtContent1, props.csstxtContent]}>{props.txtContent ? props.txtContent : 'Bạn chưa nhập Content' }</Text>
                 {
-                    props.types !== 'dialog' ? 
+                    props.types == 'modal01' ? 
+                        <View style={[styles.containPolicy,  props.cssPolicy]}>
+                            <Text style={[styles.txtDetail,props.cssTxtDetail]}>{props.txtDetail ? props.txtDetail :  'Bạn chưa nhập thông tin chi tiết'}</Text>
+                            <Text style={[styles.txtPolicy,props.cssTxtPolicy]}>{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</Text>
+                        </View> : null
+                }
+                
+                {
+                    props.types == 'modal01' ||  props.types == 'modal02' ? 
                         <TouchableOpacity style={[styles.buttonModal1, props.button1]} onPress={props.onCloseModal1} >
-                            <Text style={[styles.txtButton, props.txtButton1]}>{props.nameButton1 ? props.nameButton1 : 'Đóng'}</Text>
+                            <Text style={[styles.txtButton, props.cssTxtClose]}>{props.nameButton1 ? props.nameButton1 : 'Đóng'}</Text>
                         </TouchableOpacity> :
                         <View style={[styles.containDialogButton, props.containDialogButton]}>
                             <TouchableOpacity style={[styles.buttonModal2, props.button2]} onPress={props.onCloseModal2}>
-                                <Text style={[styles.txtButton, props.txtButton2]}>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
+                                <Text style={[styles.txtButton, props.cssTxtCancel]}>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
                             </TouchableOpacity>
                             <TouchableOpacity style={[styles.buttonModal3, props.button3]} onPress={props.onCloseModal3}>
-                                <Text style={[styles.txtButton, props.txtButton3]}>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
+                                <Text style={[styles.txtButton, props.cssTxtCall]}>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
                             </TouchableOpacity>
                         </View>
                 }

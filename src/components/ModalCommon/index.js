@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import '../../../../../web/css/bootstrap.min.css';
+import ButtonText from '../ButtonText';
 const overlayStyle = {
     position: 'fixed',
     top: 0,
@@ -24,15 +25,30 @@ export default class ModalCommon extends React.Component {
         >
         <div className="containModal">
             <div className="modalItem1">
-                <p>Modal body text goes here 1.</p>
+                <p className="txtTitle">{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</p>
             </div>
             <div className="modalItem2">
-                <p>Modal body text goes here 2. </p>
+                <p className="txtContent">{props.txtContent ? props.txtContent :  'Bạn chưa nhập content'} </p>
             </div>
+            {props.props.types == 'modal01' ? 
             <div className="modalItem3">
-                <p>Modal body text goes here 3.</p>
-                <p>Modal body text goes here 4.</p>
-            </div>
+                <p className="txtDetail">{props.txtDetail ? props.txtDetail :  'Bạn chưa nhập thông tin chi tiết'}</p>
+                <p className="txtPolicy">{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</p>
+            </div> : null 
+            }
+            
+            { 
+                props.types == 'modal01' ||  props.types == 'modal02'
+                ? 
+                <div className="button1">
+                    <ButtonText text={props.nameButton1 ? props.nameButton1 : 'Đóng'} onPress={props.onCloseModal1} />
+                </div>
+                :
+                <div className="button2">
+                    <ButtonText text={props.nameButton1 ? props.nameButton1 : 'Hủy'} onPress={props.onCloseModal2} />
+                    <ButtonText text={props.nameButton2 ? props.nameButton2 : 'Gọi'} onPress={props.onCloseModal3} />
+                </div>
+            }
         </div>
         </ReactModal>
     }
