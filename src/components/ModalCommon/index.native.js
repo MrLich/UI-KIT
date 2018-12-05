@@ -28,15 +28,15 @@ export default class ModalCommon extends React.Component {
                 </View>
                 {
                     props.types !== 'dialog' ? 
-                        <TouchableOpacity style={styles.buttonModal1} onPress={props.onCloseModal1} >
-                           <Text>{props.nameButton1 ? props.nameButton1 : 'Đóng'}</Text>
+                        <TouchableOpacity style={[styles.buttonModal1, props.button1]} onPress={props.onCloseModal1} >
+                            <Text style={[styles.txtButton, props.txtButton1]}>{props.nameButton1 ? props.nameButton1 : 'Đóng'}</Text>
                         </TouchableOpacity> :
-                        <View style={{ paddingVertical: 10, flexDirection: 'row', justifyContent: 'space-around' }}>
-                            <TouchableOpacity onPress={props.onCloseModal2}>
-                                <Text>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
+                        <View style={[styles.containDialogButton, props.containDialogButton]}>
+                            <TouchableOpacity style={[styles.buttonModal2, props.button2]} onPress={props.onCloseModal2}>
+                                <Text style={[styles.txtButton, props.txtButton2]}>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
                             </TouchableOpacity>
-                            <TouchableOpacity onPress={props.onCloseModal3}>
-                                <Text>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
+                            <TouchableOpacity style={[styles.buttonModal3, props.button3]} onPress={props.onCloseModal3}>
+                                <Text style={[styles.txtButton, props.txtButton3]}>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
                             </TouchableOpacity>
                         </View>
                 }
@@ -89,5 +89,27 @@ const styles = StyleSheet.create({
         left: 0, 
         right:0,
         bottom:0 
+    },
+    containDialogButton: { 
+        paddingVertical: 10,
+        borderBottomLeftRadius: 5,
+        borderTopRightRadius: 0, 
+        position:'absolute' ,
+        left: 0, 
+        right:0,
+        bottom:0 ,
+        flexDirection: 'row',
+        justifyContent: 'space-around' 
+    },
+    buttonModal2: {
+        backgroundColor: 'gray', 
+    },
+    buttonModal3: {
+        backgroundColor: 'rgb(74,173,205)',
+    },  
+    txtButton: {
+        textAlign: 'center',
+        color: 'white',
+        fontSize: 16
     }
 })
