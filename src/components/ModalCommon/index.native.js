@@ -2,11 +2,11 @@ import React from 'react';
 import Modal from './Modal';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 const stylesModal = {
-    height: props.height ? props.height : '30%', 
-    position:'relative' ,
-    marginRight: props.marginRight ? props.marginRigh : '10%', 
-    width:  props.width ? props.width : '90%', 
-    borderRadius:  props.borderRadius ? props.borderRadius : 5,
+    height: '30%', 
+    position:'relative',
+    marginRight: '10%', 
+    width: '90%', 
+    borderRadius: 5,
 };
 export default (props) => <Modal
     isOpen={props.visible}
