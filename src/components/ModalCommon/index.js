@@ -33,7 +33,7 @@ export default class ModalCommon extends React.Component {
             {props.types == 'modal01' ? 
             <div className="modalItem3">
                 <p className="txtDetail">{props.txtDetail ? props.txtDetail :  'Bạn chưa nhập thông tin chi tiết'}</p>
-                <p className="txtPolicy">{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</p>
+                <a className="txtPolicy">{props.txtPolicy ? props.txtPolicy : 'Bạn chưa nhập chính sách' }</a>
             </div> : null 
             }
             
