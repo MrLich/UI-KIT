@@ -25,7 +25,14 @@ export default class ModalCommon extends React.Component {
         >
         <div className="containModal">
             <div className="modalItem1">
-                <p className="txtTitle">{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</p>
+                { props.types == 'modal01' ?  
+                    <p className="txtTitle">{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</p> :
+                    props.types == 'modal02'
+                    ?
+                    <p className="txtTitleModal02">{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title dialog'}</p> 
+                    : <img src={props.source.uri || props.source} height={props.height} width={props.width} style={{ alignSelf: 'center'}}/>
+            }
+               
             </div>
             <div className="modalItem2">
                 <p className={'txtContent text-' + (props.txtAlign || 'center')}>{props.txtContent ? props.txtContent :  'Bạn chưa nhập content'} </p>
