@@ -22,7 +22,9 @@ export default class ModalCommon extends React.Component {
             <View style={[styles.container, props.container]}>
                 {
                  props.types == 'modal03' ? 
-                 <Image source={props.source.uri || props.source} height={props.heightMobile} width={props.heightMobile} style={[styles.avatar, props.avatar]}/>
+                 <View style={[styles.containAvatar, props.containAvatar]}>
+                    <Image source={props.source || {uri: 'https://pickaface.net/gallery/avatar/unr_lucasgonzales_180720_0947_2j73zgk.png'}} height={props.heightMobile} width={props.heightMobile} style={[styles.avatar, props.avatar]}/>
+                 </View>
                     : 
                     <Text style={[styles.txtTitle, props.cssTxtTile]}>{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title'}</Text>
                 }
@@ -57,6 +59,10 @@ export default class ModalCommon extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex:1
+    },
+    avatar: {
+        height: 80,
+        width: 80
     },
     txtTitle: {
         textAlign:'center',
