@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
     container: {
         flex:1
     },
+    containAvatar:{marginVertical: 15},
     avatar: {
         height: 80,
         width: 80
@@ -103,7 +104,9 @@ const styles = StyleSheet.create({
         position: 'absolute', 
         left: 0, 
         right:0,
-        bottom:0 
+        bottom:0,
+        backgroundColor:'rgb(74,173,205)', 
+        paddingVertical: 10
     },
     containDialogButton: { 
         paddingVertical: 10,
