@@ -34,7 +34,7 @@ export default class ModalCommon extends React.Component {
             }
                
             </div>
-            <div className={'modalItem2' + props.types}>
+            <div className={'modalItem2  style-' + (props.types)}>
                 <p className={'txtContent text-' + (props.txtAlign || 'center')}>{props.txtContent ? props.txtContent :  'Bạn chưa nhập content'} </p>
             </div>
             {props.types == 'modal01' ? 
