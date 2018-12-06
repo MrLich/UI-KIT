@@ -30,11 +30,11 @@ export default class ModalCommon extends React.Component {
                     props.types == 'modal02'
                     ?
                     <p className="txtTitleModal02">{props.txtTitle ? props.txtTitle : 'Bạn chưa nhập title dialog'}</p> 
-                    : <img src={props.source.uri || props.source} height={props.height} width={props.width} style={{ alignSelf: 'center'}}/>
+                    : <img src={props.source.uri || props.source} height={props.height} width={props.width} class="img_avatar"/>
             }
                
             </div>
-            <div className="modalItem2">
+            <div className={'modalItem2' + props.types}>
                 <p className={'txtContent text-' + (props.txtAlign || 'center')}>{props.txtContent ? props.txtContent :  'Bạn chưa nhập content'} </p>
             </div>
             {props.types == 'modal01' ? 
@@ -45,7 +45,7 @@ export default class ModalCommon extends React.Component {
             }
             
             { 
-                props.types == 'modal01' ||  props.types == 'modal02'
+                (props.types == 'modal01' ||  props.types == 'modal02')
                 ? 
                 <div className="button1">
                     <ButtonText text={props.nameButton1 ? props.nameButton1 : 'Đóng'} onPress={props.onCloseModal1} />
