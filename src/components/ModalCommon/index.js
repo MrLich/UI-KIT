@@ -46,7 +46,7 @@ export default class ModalCommon extends React.Component {
                 :
                 <div className="button2">
                     <ButtonText text={props.nameButton1 ? props.nameButton1 : 'Hủy'} onPress={props.onCloseModal2} />
-                    <ButtonText text={props.nameButton2 ? props.nameButton2 : 'Gọi'} onPress={props.onCloseModal3} />
+                    <ButtonText text={props.nameButton2 ? props.nameButton2 : 'Gọi'} type='dark' onPress={props.onCloseModal3} />
                 </div>
             }
         </div>
