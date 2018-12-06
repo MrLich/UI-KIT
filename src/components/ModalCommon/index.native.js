@@ -46,7 +46,7 @@ export default class ModalCommon extends React.Component {
                             <TouchableOpacity style={[styles.buttonModal2, props.button2]} onPress={props.onCloseModal2}>
                                 <Text style={[styles.txtButton, props.cssTxtCancel]}>{props.nameButton1 ? props.nameButton1 : 'Hủy'}</Text>    
                             </TouchableOpacity>
-                            <TouchableOpacity style={[styles.buttonModal3, props.button3]} onPress={props.onCloseModal3}>
+                            <TouchableOpacity style={[styles.buttonModal3, props.button3]} onPress={props.onCloseModal2}>
                                 <Text style={[styles.txtButton, props.cssTxtCall]}>{props.nameButton2 ? props.nameButton2 : 'Gọi'}</Text>
                             </TouchableOpacity>
                         </View>
